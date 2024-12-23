@@ -4,6 +4,7 @@
 $tireqty = $_POST['tireqty'];
 $oilqty = $_POST['oilqty'];
 $sparkqty = $_POST['sparkqty'];
+$find = $_POST['find'];
 ?>
 <html>
 
@@ -35,6 +36,18 @@ $sparkqty = $_POST['sparkqty'];
     $taxrate = 0.10; // local sales tax is 10%
     $totalamount = $totalamount * (1 + $taxrate);
     echo "Total including tax: $" . number_format($totalamount, 2) . "</p>";
+    
+    if ($find == "a") {
+        echo "<p>Regular customer.</p>";
+        } elseif ($find == "b") {
+        echo "<p>Customer referred by TV advert.</p>";
+        } elseif ($find == "c") {
+        echo "<p>Customer referred by phone directory.</p>";
+        } elseif ($find == "d") {
+        echo "<p>Customer referred by word of mouth.</p>";
+        } else {
+        echo "<p>We do not know how this customer found us.</p>";
+        }
     ?>
 </body>
 
